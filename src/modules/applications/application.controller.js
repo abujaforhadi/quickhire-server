@@ -4,8 +4,7 @@ export const submitApplication = async (req, res) => {
   try {
     const application =
       await ApplicationService.createApplication(
-        req.body,
-        req.user
+        req.body
       );
 
     res.status(201).json({

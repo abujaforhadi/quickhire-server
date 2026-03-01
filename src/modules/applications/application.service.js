@@ -12,8 +12,7 @@ export const createApplication = async (payload) => {
 };
 export const getAllApplications = async () => {
   return await Application.find()
-    .populate("job_id")
-    .populate("user_id", "name email");
+    .populate("job_id");
 };
 
 export const getMyApplications = async (userId) => {
