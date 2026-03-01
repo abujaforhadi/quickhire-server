@@ -1,0 +1,8 @@
+import serverless from "serverless-http";
+import app from "../src/app.js";
+import { connectDB } from "../src/lib/db.js";
+
+export default async function handler(req, res) {
+  await connectDB();
+  return serverless(app)(req, res);
+}
